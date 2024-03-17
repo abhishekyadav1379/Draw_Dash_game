@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Draw Dash</title>
+    <meta property="og:title" content="Portly Apt Newt" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <style data-tag="reset-style-sheet">
+      html {
+        line-height: 1.15;
+      }
+
+      body {
+        margin: 0;
+      }
+
+      * {
+        box-sizing: border-box;
+        border-width: 0;
+        border-style: solid;
+      }
+
+      p,
+      li,
+      ul,
+      pre,
+      div,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      figure,
+      blockquote,
+      figcaption {
+        margin: 0;
+        padding: 0;
+      }
+
+      button {
+        background-color: transparent;
+      }
+
+      button,
+      input,
+      optgroup,
+      select,
+      textarea {
+        font-family: inherit;
+        font-size: 100%;
+        line-height: 1.15;
+        margin: 0;
+      }
+
+      button,
+      select {
+        text-transform: none;
+      }
+
+      button,
+      [type="button"],
+      [type="reset"],
+      [type="submit"] {
+        -webkit-appearance: button;
+      }
+
+      button::-moz-focus-inner,
+      [type="button"]::-moz-focus-inner,
+      [type="reset"]::-moz-focus-inner,
+      [type="submit"]::-moz-focus-inner {
+        border-style: none;
+        padding: 0;
+      }
+
+      button:-moz-focus,
+      [type="button"]:-moz-focus,
+      [type="reset"]:-moz-focus,
+      [type="submit"]:-moz-focus {
+        outline: 1px dotted ButtonText;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: inherit;
+      }
+
+      input {
+        padding: 2px 4px;
+      }
+
+      img {
+        display: block;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style: normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/animate.css@4.1.1/animate.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css"
+    />
+    <style>
+      [data-thq="thq-dropdown"]:hover > [data-thq="thq-dropdown-list"] {
+        display: flex;
+      }
+
+      [data-thq="thq-dropdown"]:hover > div [data-thq="thq-dropdown-arrow"] {
+        transform: rotate(90deg);
+      }
+    </style>
+    <title>Draw Dash</title>
+  </head>
+
+  <body>
+    {% comment %} <div id="start_game_content">
+      {% include 'start_game.html' %}
+    </div>
+    <div id="main_game_content" style="display: none">
+      {% include 'main_game.html' %}
+    </div>
+    <div id="gameover_content" style="display: none">
+      {% include 'gameover.html' %}
+    </div> {% endcomment %}
+
+    <div>
+      <!-- <link href="./index.css" rel="stylesheet" /> -->
+      <input type="text" id="keyboardInput" style="display: none" />
+      <div class="draw-container">
+        <div id="drawing_home_id" class="draw-container1">
+          <h1 id="game_name" class="draw-text">✏️ Draw Dash ✏️</h1>
+          <div class="draw-gamebar">
+            <label id="Time" class="draw-time">⌛30s</label>
+            <label id="guess_word" class="draw-guessword">
+              C_ _ _ m _&nbsp;
+            </label>
+            <label id="rounds" class="draw-rounds">3/4🔃</label>
+          </div>
+          <div class="draw-container2">
+            <div class="draw-canvas-area">
+              <div class="draw-maincanvas">
+                {% comment %}
+                <canvas
+                  class="myCanvas"
+                  id="myCanvas"
+                  width="510"
+                  height="384"
+                ></canvas>
+                {% endcomment %}
+                <canvas
+                  class="myCanvas"
+                  id="myCanvas"
+                  width="800"
+                  height="600"
+                ></canvas>
+                <div class="choose-word-container">
+                  <div class="choose-word-container1">
+                    <h1 class="choose-word-text">Choose a word</h1>
+                    <span class="choose-word-whoischoosing">
+                      <span>By Abhishek</span>
+                      <br />
+                    </span>
+                    <div class="choose-word-all-words">
+                      <span class="choose-word-word">
+                        <span>Chair</span>
+                        <br />
+                      </span>
+                      <span class="choose-word-word">
+                        <span>Moter</span>
+                        <br />
+                      </span>
+                      <span class="choose-word-word">
+                        <span>Glass</span>
+                        <br />
+                      </span>
+                      <span class="choose-word-word">
+                        <span>peacock</span>
+                        <br />
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="draw-container3">
+                  <span id="like" class="draw-text01">👍🏻</span>
+                  <span id="dislike" class="draw-text02">👎🏻</span>
+                </div>
+              </div>
+            </div>
+            <div id="draw-color-container" class="draw-color-container">
+              <div class="draw-colorscontainer">
+                <label class="draw-red" name="rgb(255, 0, 0)"
+                  >&nbsp; &nbsp;&nbsp;</label
+                >
+                <label class="draw-green" name="rgb(0, 255, 0)"
+                  >&nbsp; &nbsp;&nbsp;</label
+                >
+                <label class="draw-blue" name="rgb(0, 0, 255)"
+                  >&nbsp; &nbsp;&nbsp;</label
+                >
+                <label class="draw-white" name="rgb(255, 255, 255)"
+                  >&nbsp; &nbsp;&nbsp;</label
+                >
+                <label class="draw-black" name="rgb(0, 0, 1)"
+                  >&nbsp; &nbsp;&nbsp;</label
+                >
+                <label class="draw-yellow" name="rgb(255, 255, 0)"
+                  >&nbsp; &nbsp;&nbsp;</label
+                >
+                <label class="draw-grey" name="rgb(128, 128, 128)"
+                  >&nbsp; &nbsp;&nbsp;</label
+                >
+              </div>
+              <div class="draw-container4">
+                <div
+                  data-thq="thq-dropdown"
+                  class="draw-thq-dropdown list-item"
+                >
+                  <div
+                    data-thq="thq-dropdown-toggle"
+                    class="draw-dropdown-toggle"
+                  >
+                    <span class="draw-text03">•</span>
+                    <div
+                      data-thq="thq-dropdown-arrow"
+                      class="draw-dropdown-arrow"
+                    >
+                      <svg viewBox="0 0 1024 1024" class="draw-icon">
+                        <path d="M426 726v-428l214 214z"></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <ul data-thq="thq-dropdown-list" class="draw-dropdown-list">
+                    <li data-thq="thq-dropdown" class="draw-dropdown list-item">
+                      <div
+                        data-thq="thq-dropdown-toggle"
+                        class="draw-dropdown-toggle1"
+                      >
+                        <span class="draw-text04">5</span>
+                      </div>
+                    </li>
+                    <li data-thq="thq-dropdown" class="draw-dropdown list-item">
+                      <div
+                        data-thq="thq-dropdown-toggle"
+                        class="draw-dropdown-toggle1"
+                      >
+                        <span class="draw-text04">4</span>
+                      </div>
+                    </li>
+                    <li data-thq="thq-dropdown" class="draw-dropdown list-item">
+                      <div
+                        data-thq="thq-dropdown-toggle"
+                        class="draw-dropdown-toggle1"
+                      >
+                        <span class="draw-text04">3</span>
+                      </div>
+                    </li>
+                    <li data-thq="thq-dropdown" class="draw-dropdown list-item">
+                      <div
+                        data-thq="thq-dropdown-toggle"
+                        class="draw-dropdown-toggle1"
+                      >
+                        <span class="draw-text04">2</span>
+                      </div>
+                    </li>
+                    <li data-thq="thq-dropdown" class="draw-dropdown list-item">
+                      <div
+                        data-thq="thq-dropdown-toggle"
+                        class="draw-dropdown-toggle1"
+                      >
+                        <span class="draw-text04">1</span>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="draw-container5">
+                <label id="fill_color" class="draw-fillcolor">🎨</label>
+              </div>
+              <div class="draw-container6">
+                <label id="undo" class="draw-undo">↩️</label>
+                <label id="clear_all" class="draw-clear">🚮 </label>
+              </div>
+            </div>
+            <div class="draw-usersandchats">
+              <div class="draw-users">
+                <div class="draw-usersscore">
+                  <span class="draw-username">Ravindra</span>
+                  <span class="draw-userscore">500</span>
+                </div>
+              </div>
+              <div class="draw-chats">
+                <div id="messages" class="draw-messages">
+                  <span class="draw-receivermessage">
+                    <span>
+                      Who the fuck teell you that how am i woking for you&nbsp;
+                    </span>
+                    <br />
+                  </span>
+                  <span class="draw-text11">
+                    <span>Hello</span>
+                    <br />
+                  </span>
+                  <span class="draw-sendermessage">
+                    <span>Hello</span>
+                    <br />
+                  </span>
+                  <span class="draw-sendermessage01">
+                    <span>Hello</span>
+                    <br />
+                  </span>
+                  <span class="draw-sendermessage02">
+                    <span>Hello</span>
+                    <br />
+                  </span>
+                </div>
+                <button
+                  id="tap_to_guess_btn"
+                  type="button"
+                  class="draw-button button"
+                >
+                  <span class="draw-text54">
+                    <span>Tap to guess</span>
+                    <br />
+                  </span>
+                </button>
+                <input
+                  type="text"
+                  id="input_message"
+                  placeholder="Type your word"
+                  class="draw-textinput input"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  {% load static %}
+  <!-- <link rel="stylesheet" href="{% static 'style.css' %}"> -->
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static 'main_drawing_style.css' %}"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% static 'main_drawing.css' %}"
+  />
+  <script>
+    var user = "{{user}}";
+    var room_name = "{{room_name}}";
+  </script>
+  {% load static %}
+  <script src="{% static 'main_drawing_functions.js' %}"></script>
+  <script src="{% static 'main_drawing.js' %}"></script>
+</html>

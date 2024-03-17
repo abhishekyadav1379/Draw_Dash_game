@@ -1,0 +1,180 @@
+.moving-image {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    animation: moveImage 30s linear infinite; /* Adjust animation duration as per your preference */
+    /* z-index: 300; */
+  }
+  @keyframes moveImage {
+    0% {
+      left: -20%;
+      bottom: -20%;
+    }
+    100% {
+      left: 100%; /* Adjust this value to move the image to the right */
+      bottom: 100%; /* Adjust this value to move the image to the top */
+    }
+  }
+  
+  @keyframes moveRight {
+    from {
+      background-position: 0% 0%;
+    }
+    to {
+      background-position: 100% 0%;
+    }
+  }
+  body{
+    overflow: hidden;
+  }
+  
+  @keyframes moveUpDown {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px); /* Move up by 10 pixels */
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  
+  .entry-container {
+    width: 100%;
+    display: flex;
+    overflow: auto;
+    min-height: 100vh;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url("universe.jpg");
+    background-repeat: repeat;
+    animation: moveRight 100s linear infinite;
+    overflow: hidden;
+  }
+  .entry-container:focus {
+    background: #fff;
+  }
+  .entry-gamename {
+    top: 0px;
+    left: 0px;
+    color: rgb(255, 255, 255);
+    right: 0px;
+    margin: 10px;
+    position: absolute;
+    font-size: 40px;
+    text-align: center;
+  }
+  .entry-joiningwindow {
+    flex: 0 0 auto;
+    width: 348px;
+    height: auto;
+    display: flex;
+    position: relative;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    animation: moveUpDown 2s ease-in-out infinite;
+  }
+  .entry-image {
+    width: 100%;
+    align-self: flex-start;
+    object-fit: cover;
+  }
+  .entry-container1 {
+    width: 276px;
+    height: 128px;
+    display: flex;
+    margin-top: 10px;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .entry-textinput {
+    width: 100%;
+    height: 50%;
+    align-self: stretch;
+    border-width: 0px;
+  }
+  .entry-textinput1 {
+    width: 100%;
+    height: 50%;
+    align-self: stretch;
+    margin-top: 10px;
+    border-width: 0px;
+  }
+  .entry-button {
+    align-self: center;
+    font-style: normal;
+    margin-top: 10px;
+    font-weight: 700;
+    border-width: 0px;
+  }
+  .entry-footer {
+    left: 0px;
+    width: 100%;
+    bottom: 0px;
+    display: flex;
+    position: absolute;
+    max-width: var(--dl-size-size-maxwidth);
+    align-items: center;
+    padding-top: var(--dl-space-space-twounits);
+    padding-left: var(--dl-space-space-threeunits);
+    padding-right: var(--dl-space-space-threeunits);
+    padding-bottom: var(--dl-space-space-twounits);
+    justify-content: space-between;
+  }
+  .entry-text {
+    color: rgb(255, 253, 253);
+  }
+  .entry-icon-group {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .entry-icon {
+    width: var(--dl-size-size-xsmall);
+    height: var(--dl-size-size-xsmall);
+    margin-right: var(--dl-space-space-twounits);
+  }
+  .entry-icon2 {
+    width: var(--dl-size-size-xsmall);
+    height: var(--dl-size-size-xsmall);
+    margin-right: var(--dl-space-space-twounits);
+  }
+  .entry-icon4 {
+    width: var(--dl-size-size-xsmall);
+    height: var(--dl-size-size-xsmall);
+  }
+  @media(max-width: 767px) {
+    .entry-footer {
+      padding-left: var(--dl-space-space-twounits);
+      padding-right: var(--dl-space-space-twounits);
+    }
+    .entry-text {
+      text-align: center;
+      margin-left: var(--dl-space-space-unit);
+      margin-right: var(--dl-space-space-unit);
+    }
+  }
+  @media(max-width: 479px) {
+    .entry-footer {
+      padding: var(--dl-space-space-unit);
+      flex-direction: column;
+    }
+    .entry-text {
+      margin-left: 0px;
+      margin-right: 0px;
+      margin-bottom: var(--dl-space-space-unit);
+    }
+  }
+  
+  @media screen and (max-width: 360px) {
+    .entry-gamename {
+      font-size: 30px;
+    }
+  }
+  

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fixed Input Field</title>
+<style>
+  .fixed-input {
+    position: fixed;
+    top: 20px; /* Adjust as needed */
+    left: 20px; /* Adjust as needed */
+    z-index: 999; /* Ensures the input stays on top */
+  }
+</style>
+</head>
+<body>
+
+<!-- Your content goes here -->
+<div style="height: 2000px;"> <!-- Just for demonstration purposes to create scroll -->
+  <h1>Scroll Down</h1>
+</div>
+
+<!-- Fixed input field -->
+<input type="text" class="fixed-input" placeholder="Type something...">
+
+</body>
+</html>

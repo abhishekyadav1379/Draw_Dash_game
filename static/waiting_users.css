@@ -1,0 +1,277 @@
+.moving-image-diagonal {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    animation: moveImageDiagonal 10s linear infinite; /* Adjust animation duration as per your preference */
+    height: 150px;
+    /* z-index: 300; */
+  }
+  @keyframes moveImageDiagonal {
+    0% {
+      left: 100%;
+      bottom: 100%;
+    }
+    100% {
+      left: -20%; /* Adjust this value to move the image to the right */
+      bottom: -20%; /* Adjust this value to move the image to the top */
+    }
+  }
+  
+  
+  .moving-image {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    animation: moveImage 30s linear infinite; /* Adjust animation duration as per your preference */
+    /* z-index: 300; */
+  }
+  @keyframes moveImage {
+    0% {
+      left: -20%;
+      bottom: -20%;
+    }
+    100% {
+      left: 100%; /* Adjust this value to move the image to the right */
+      bottom: 100%; /* Adjust this value to move the image to the top */
+    }
+  }
+  
+  @keyframes moveRight {
+    from {
+      background-position: 0% 100%;
+    }
+    to {
+      background-position: 0% 0%;
+    }
+  }
+  body{
+    overflow: hidden;
+  }
+  
+  @keyframes moveUpDown {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px); /* Move up by 10 pixels */
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  
+  
+  .waiting-area-container {
+    width: 100%;
+    display: flex;
+    overflow: auto;
+    min-height: 100vh;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url("universe.jpg");
+    background-repeat: repeat;
+    animation: moveRight 10s linear infinite;
+    overflow: hidden;
+  }
+  .waiting-area-container:focus {
+    background: #fff;
+  }
+  .waiting-area-gamename {
+    top: 0px;
+    left: 0px;
+    color: rgb(255, 255, 255);
+    right: 0px;
+    margin: 20px;
+    position: absolute;
+    font-size: 40px;
+    text-align: center;
+  }
+  .waiting-area-footer {
+    left: 0px;
+    width: 100%;
+    bottom: 0px;
+    display: flex;
+    position: absolute;
+    max-width: var(--dl-size-size-maxwidth);
+    align-items: center;
+    padding-top: var(--dl-space-space-twounits);
+    padding-left: var(--dl-space-space-threeunits);
+    padding-right: var(--dl-space-space-threeunits);
+    padding-bottom: var(--dl-space-space-twounits);
+    justify-content: space-between;
+  }
+  .waiting-area-text {
+    color: rgb(255, 253, 253);
+  }
+  .waiting-area-icon-group {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .waiting-area-icon {
+    width: var(--dl-size-size-xsmall);
+    height: var(--dl-size-size-xsmall);
+    margin-right: var(--dl-space-space-twounits);
+  }
+  .waiting-area-icon2 {
+    width: var(--dl-size-size-xsmall);
+    height: var(--dl-size-size-xsmall);
+    margin-right: var(--dl-space-space-twounits);
+  }
+  .waiting-area-icon4 {
+    width: var(--dl-size-size-xsmall);
+    height: var(--dl-size-size-xsmall);
+  }
+  .waiting-area-container1 {
+    flex: 0 0 auto;
+    width: auto;
+    height: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    animation: moveUpDown 2s ease-in-out infinite;
+  }
+  .waiting-area-container2 {
+    width: auto;
+    height: auto;
+    display: flex;
+    align-items: center;
+    border-color: var(--dl-color-gray-black);
+    border-width: 3px;
+    border-radius: var(--dl-radius-radius-radius4);
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: #12273a;
+    border-top-width: 0px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+  }
+  .waiting-area-container3 {
+    flex: 0 0 auto;
+    width: auto;
+    height: auto;
+    display: flex;
+    align-self: stretch;
+    margin-top: 10px;
+    align-items: flex-start;
+    margin-left: 5px;
+    margin-right: 5px;
+    justify-content: flex-start;
+  }
+  .waiting-area-select {
+    padding-top: 5px;
+    padding-left: 5px;
+    border-radius: var(--dl-radius-radius-radius4);
+    padding-right: 5px;
+    padding-bottom: 5px;
+  }
+  .waiting-area-select1 {
+    margin-left: 5px;
+    padding-top: 5px;
+    margin-right: 5px;
+    padding-left: 5px;
+    border-radius: var(--dl-radius-radius-radius4);
+    padding-right: 5px;
+    padding-bottom: 5px;
+  }
+  .waiting-area-select2 {
+    padding-top: 5px;
+    padding-left: 5px;
+    border-radius: var(--dl-radius-radius-radius4);
+    padding-right: 5px;
+    padding-bottom: 5px;
+  }
+  .waiting-area-text1 {
+    color: rgb(255, 255, 255);
+    align-self: stretch;
+    margin-top: 10px;
+    text-align: center;
+  }
+  .waiting-area-container4 {
+    flex: 0 0 auto;
+    width: 100%;
+    height: auto;
+    display: flex;
+    overflow: auto;
+    max-height: 50vh;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .waiting-area-username {
+    color: rgb(154, 227, 251);
+    font-size: 25px;
+    align-self: stretch;
+    font-style: normal;
+    margin-top: 5px;
+    text-align: center;
+    font-weight: 700;
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: var(--dl-radius-radius-radius4);
+    margin-bottom: 5px;
+  }
+  .waiting-area-button {
+    align-self: center;
+    font-style: normal;
+    margin-top: 10px;
+    font-weight: 700;
+    border-width: 0px;
+    margin-bottom: 10px;
+  }
+  .waiting-area-container5 {
+    flex: 0 0 auto;
+    width: 100%;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .waiting-area-image {
+    width: 81px;
+    height: 120px;
+    object-fit: cover;
+  }
+  .waiting-area-image1 {
+    top: 0px;
+    right: 0px;
+    width: 81px;
+    height: 120px;
+    position: absolute;
+    object-fit: cover;
+  }
+  @media(max-width: 767px) {
+    .waiting-area-footer {
+      padding-left: var(--dl-space-space-twounits);
+      padding-right: var(--dl-space-space-twounits);
+    }
+    .waiting-area-text {
+      text-align: center;
+      margin-left: var(--dl-space-space-unit);
+      margin-right: var(--dl-space-space-unit);
+    }
+  }
+  @media(max-width: 479px) {
+    .waiting-area-footer {
+      padding: var(--dl-space-space-unit);
+      flex-direction: column;
+    }
+    .waiting-area-text {
+      margin-left: 0px;
+      margin-right: 0px;
+      margin-bottom: var(--dl-space-space-unit);
+    }
+  }
+  
+  @media screen and (max-width: 360px) {
+    .waiting-area-gamename {
+      font-size: 30px;
+    }
+    .game-over-gamename{
+      font-size: 30px;
+    }
+  }

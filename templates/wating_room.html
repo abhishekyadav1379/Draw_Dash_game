@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Usernames</title>
+</head>
+<body>
+    <div id="usernames">
+        <p>{{room_name}}</p>
+        <p>{{username}}</p>
+        <p>User2</p>
+        <p>User3</p>
+    </div>
+    <button id="startButton">Start</button>
+</body>
+
+
+<script>
+    const websocketProtocol = window.location.protocol === "https:" ? "wss" : "ws";
+    const wsEndpoint = `${websocketProtocol}://${window.location.host}/ws/notification/waiting_room/{{room_name}}/{{username}}/`;
+    const socket = new WebSocket(wsEndpoint);
+    var username = "{{username}}";
+
+    
+    document.getElementById("startButton").addEventListener("click", () => {
+        socket.send(JSON.stringify({ action: "start", username: username }));
+    })
+
+    socket.onmessage = (event) => {
+    const data = JSON.parse(event.data);
+    if (data.redirect_url) {
+        // Redirect to the specified URL
+        // Example URL
+        const url = window.location.href;
+        const firstSlashIndex = url.indexOf('/', url.indexOf('//') + 2);
+        const beforeFirstSlash = url.substring(0, firstSlashIndex);
+
+        const final_url = beforeFirstSlash +'/' + "{{room_name}}/" + "{{username}}";
+        window.location.href = final_url;
+        // Print the result
+        console.log(beforeFirstSlash);
+
+    } else {
+        // Handle other messages
+        const users = data.message;
+        console.log("Received message:", users);
+        // Select the <div> element with id "usernames"
+        const usernamesDiv = document.getElementById("usernames");
+        // Clear previous content
+        usernamesDiv.innerHTML = "";
+        // Loop through the users and add them to the <div>
+        users.forEach(user => {
+            const pElement = document.createElement("p");
+            pElement.textContent = user;
+            usernamesDiv.appendChild(pElement);
+        });
+    }
+};
+
+    
+    
+    socket.onopen = (event) => {
+        console.log("WebSocket connection opened!");
+    };
+
+    socket.onclose = (event) => {
+        console.log("WebSocket connection closed!");
+        //socket.send(JSON.stringify({ action: "disconnect", username: username }));
+    };  
+</script>
+
+<style>
+/* Style for the main container */
+#usernames {
+    width: 80%; /* Adjust as needed */
+    margin: 0 auto; /* Center the container */
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+}
+
+/* Style for the paragraphs inside #usernames */
+#usernames p {
+    margin: 10px 0;
+    font-size: 18px; /* Adjust as needed */
+}
+
+/* Style for the button */
+#startButton {
+    display: block;
+    width: 100px; /* Adjust as needed */
+    margin: 20px auto; /* Center the button */
+    padding: 10px;
+    font-size: 16px; /* Adjust as needed */
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+    #usernames {
+        width: 90%; /* Adjust as needed */
+    }
+}
+</style>
+</html>

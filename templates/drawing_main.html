@@ -1,0 +1,212 @@
+<div>
+    <!-- <link href="./index.css" rel="stylesheet" /> -->
+    <input type="text" id="keyboardInput" />
+    <div class="draw-container">
+      <div id="drawing_home_id" class="draw-container1">
+        <h1 id="game_name" class="draw-text">✏️ Draw Dash ✏️</h1>
+        <div class="draw-gamebar">
+          <label id="Time" class="draw-time">⌛30s</label>
+          <label id="guess_word" class="draw-guessword">
+            C_ _ _ m _&nbsp;
+          </label>
+          <label id="rounds" class="draw-rounds">0/0🔃</label>
+        </div>
+        <div class="draw-container2">
+          <div class="draw-canvas-area">
+            <div class="draw-maincanvas">
+              {% comment %}
+              <canvas
+                class="myCanvas"
+                id="myCanvas"
+                width="510"
+                height="384"
+              ></canvas>
+              {% endcomment %}
+              <canvas
+                class="myCanvas"
+                id="myCanvas"
+                width="800"
+                height="600"
+              ></canvas>
+              <div class="choose-word-container">
+                <div class="choose-word-container1">
+                  <h1 class="choose-word-text">Choose a word</h1>
+                  <span class="choose-word-whoischoosing">
+                    <span>By Abhishek</span>
+                    <br />
+                  </span>
+                  <div class="choose-word-all-words">
+                    <span class="choose-word-word">
+                      <span>Chair</span>
+                      <br />
+                    </span>
+                    <span class="choose-word-word">
+                      <span>Moter</span>
+                      <br />
+                    </span>
+                    <span class="choose-word-word">
+                      <span>Glass</span>
+                      <br />
+                    </span>
+                    <span class="choose-word-word">
+                      <span>peacock</span>
+                      <br />
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div id = "like_dislike_cont" class="draw-container3" style="display: block;">
+                <span id="like" class="draw-text01">👍🏻</span>
+                <span id="dislike" class="draw-text02">👎🏻</span>
+              </div>
+            </div>
+          </div>
+          <div id="draw-color-container" class="draw-color-container">
+            <div class="draw-colorscontainer">
+              <label class="draw-red" name="rgb(255, 0, 0)"
+                >&nbsp; &nbsp;&nbsp;</label
+              >
+              <label class="draw-green" name="rgb(0, 255, 0)"
+                >&nbsp; &nbsp;&nbsp;</label
+              >
+              <label class="draw-blue" name="rgb(0, 0, 255)"
+                >&nbsp; &nbsp;&nbsp;</label
+              >
+              <label class="draw-white" name="rgb(255, 255, 255)"
+                >&nbsp; &nbsp;&nbsp;</label
+              >
+              <label class="draw-black" name="rgb(0, 0, 1)"
+                >&nbsp; &nbsp;&nbsp;</label
+              >
+              <label class="draw-yellow" name="rgb(255, 255, 0)"
+                >&nbsp; &nbsp;&nbsp;</label
+              >
+              <label class="draw-grey" name="rgb(128, 128, 128)"
+                >&nbsp; &nbsp;&nbsp;</label
+              >
+            </div>
+            <div class="draw-container4">
+              <div
+                data-thq="thq-dropdown"
+                class="draw-thq-dropdown list-item"
+              >
+                <div
+                  data-thq="thq-dropdown-toggle"
+                  class="draw-dropdown-toggle"
+                >
+                  <span class="draw-text03">•</span>
+                  <div
+                    data-thq="thq-dropdown-arrow"
+                    class="draw-dropdown-arrow"
+                  >
+                    <svg viewBox="0 0 1024 1024" class="draw-icon">
+                      <path d="M426 726v-428l214 214z"></path>
+                    </svg>
+                  </div>
+                </div>
+                <ul data-thq="thq-dropdown-list" class="draw-dropdown-list">
+                  <li data-thq="thq-dropdown" class="draw-dropdown list-item">
+                    <div
+                      data-thq="thq-dropdown-toggle"
+                      class="draw-dropdown-toggle1"
+                    >
+                      <span class="draw-text04">5</span>
+                    </div>
+                  </li>
+                  <li data-thq="thq-dropdown" class="draw-dropdown list-item">
+                    <div
+                      data-thq="thq-dropdown-toggle"
+                      class="draw-dropdown-toggle1"
+                    >
+                      <span class="draw-text04">4</span>
+                    </div>
+                  </li>
+                  <li data-thq="thq-dropdown" class="draw-dropdown list-item">
+                    <div
+                      data-thq="thq-dropdown-toggle"
+                      class="draw-dropdown-toggle1"
+                    >
+                      <span class="draw-text04">3</span>
+                    </div>
+                  </li>
+                  <li data-thq="thq-dropdown" class="draw-dropdown list-item">
+                    <div
+                      data-thq="thq-dropdown-toggle"
+                      class="draw-dropdown-toggle1"
+                    >
+                      <span class="draw-text04">2</span>
+                    </div>
+                  </li>
+                  <li data-thq="thq-dropdown" class="draw-dropdown list-item">
+                    <div
+                      data-thq="thq-dropdown-toggle"
+                      class="draw-dropdown-toggle1"
+                    >
+                      <span class="draw-text04">1</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="draw-container5">
+              <label id="fill_color" class="draw-fillcolor">🎨</label>
+            </div>
+            <div class="draw-container6">
+              <label id="undo" class="draw-undo">↩️</label>
+              <label id="clear_all" class="draw-clear">🚮 </label>
+            </div>
+          </div>
+          <div class="draw-usersandchats">
+            <div class="draw-users">
+              <div class="draw-usersscore">
+                <span class="draw-username">Ravindra</span>
+                <span class="draw-userscore">500</span>
+              </div>
+            </div>
+            <div class="draw-chats">
+              <div id="messages" class="draw-messages">
+                <span class="draw-receivermessage">
+                  {% comment %} <span>
+                    Who the fuck teell you that how am i woking for you&nbsp;
+                  </span> {% endcomment %}
+                  {% comment %} <br /> {% endcomment %}
+                {% comment %} </span>
+                <span class="draw-text11">
+                  <span>Hello</span>
+                  <br />
+                </span>
+                <span class="draw-sendermessage">
+                  <span>Hello</span>
+                  <br />
+                </span>
+                <span class="draw-sendermessage01">
+                  <span>Hello</span>
+                  <br />
+                </span>
+                <span class="draw-sendermessage02">
+                  <span>Hello</span>
+                  <br />
+                </span> {% endcomment %}
+              </div>
+              <button
+                id="tap_to_guess_btn"
+                type="button"
+                class="draw-button button"
+              >
+                <span class="draw-text54">
+                  <span>Tap to guess</span>
+                  <br />
+                </span>
+              </button>
+              <input
+                type="text"
+                id="input_message"
+                placeholder="Type your word"
+                class="draw-textinput input"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
