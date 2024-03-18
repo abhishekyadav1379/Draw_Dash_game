@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Room, Message
+# from .models import Room, Message
 # from .sql_code import Sql_codes
 from .Global_variable import *
 
