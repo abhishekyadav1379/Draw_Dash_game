@@ -1,7 +1,7 @@
 import json
 from channels.generic.websocket import AsyncWebsocketConsumer
 from channels.db import database_sync_to_async
-from ChatApp.models import Room, Message
+# from ChatApp.models import Room, Message
 from django.shortcuts import render, redirect
 # from . import sql_code
 # from .sql_code import Sql_codes
