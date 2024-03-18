@@ -46,20 +46,20 @@ def CreateRoom(request):
 
 def  MessageView(request, room_name, username):
     
-    get_room = Room.objects.get(room_name=room_name)
+    # get_room = Room.objects.get(room_name=room_name)
 
-    if request.method == 'POST':
-        message = request.POST['message']
+    # if request.method == 'POST':
+    #     message = request.POST['message']
 
-        print(message)
+    #     print(message)
 
-        new_message = Message(room=get_room, sender=username, message=message)
-        new_message.save()
+    #     new_message = Message(room=get_room, sender=username, message=message)
+    #     new_message.save()
 
-    get_messages= Message.objects.filter(room=get_room)
+    # get_messages= Message.objects.filter(room=get_room)
     
+        # "messages": get_messages,
     context = {
-        "messages": get_messages,
         "user": username,
         "room_name": room_name,
     }
