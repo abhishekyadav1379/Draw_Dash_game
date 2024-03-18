@@ -84,10 +84,20 @@ CHANNEL_LAYERS = {
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postsq_uponbreeze',
+        'USER': 'postsq_uponbreeze',
+        'PASSWORD': '63be1f9285098967ce443c338a5df2697b6eaaf7',
+        'HOST': 'ycb.h.filess.io',
+        'PORT': '5432',
     }
 }
 
